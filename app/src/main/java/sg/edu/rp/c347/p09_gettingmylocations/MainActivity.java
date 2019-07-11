@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnStart = findViewById(R.id.btnStart);
         btnStop = findViewById(R.id.btnStop);
         btnCheck = findViewById(R.id.btnCheck);
+        tv = findViewById(R.id.tv);
 
         client = LocationServices.getFusedLocationProviderClient(this);
 
@@ -84,8 +85,6 @@ public class MainActivity extends AppCompatActivity {
                             while (line != null) {
                                 data += line + "\n";
                                 line = br.readLine();
-                                Toast.makeText(MainActivity.this, line,
-                                        Toast.LENGTH_LONG).show();
                             }
                             br.close();
                             reader.close();
@@ -94,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
-                        tv.setText(data);
+                        Toast.makeText(MainActivity.this, data,
+                                Toast.LENGTH_LONG).show();
                         Log.d ("Content",data);
                     }
                 } else {

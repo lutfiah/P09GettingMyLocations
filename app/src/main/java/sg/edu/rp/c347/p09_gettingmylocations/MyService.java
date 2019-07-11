@@ -69,7 +69,7 @@ public class MyService extends Service {
                     File targetFile = new File(folderLocation, "data.txt");
                     try {
                         FileWriter writer_I = new FileWriter(targetFile, true);
-                        writer_I.write("test data" + "\n");
+                        writer_I.write(data + "\n");
                         writer_I.flush();
                         writer_I.close();
                     } catch (Exception e) {
